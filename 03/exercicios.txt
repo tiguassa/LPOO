@@ -1,0 +1,65 @@
+Lista de exercícios 3 LPOO
+
+1. Implemente e entenda os exemplos da aula;
+
+2. (Tarefa 3) Construa um programa que seja capaz de efetuar a média de todos os argumentos
+inteiros ou reais recebidos do teclado e imprimi-los. Argumentos inválidos devem ser
+desconsiderados (Imprimir uma mensagem para cada valor inválido.), sem provocar a
+exibição de exceções (Exiba uma mensagem para o usuário pedindo a ele que informe
+novamente o valor). O usuário deve digitar S quando desejar encerrar a entrada de dados;
+
+3. (Tarefa 3) Faça uma classe executável que dado um conjunto de 20 elementos numéricos,
+informe a soma de todos os números pares. Faça a validação de dados inválidos informando
+o usuário, e fazendo-o repetir a digitação.
+4. Dados os valores de um depósito fixo mensal e um montante desejado, determine quantos
+meses são necessários para acumular o montante desejado, considerando juros mensais de
+0,5%. Resolva com iterações (sem a fórmula de juros compostos) e imprima os valores mês
+a mês e o valor final. Obtenha as entradas do teclado.
+5. Faça um programa que seja capaz de imprimir no console o valor por extenso de um número
+inteiro recebido como parâmetro. O valor recebido deve estar no intervalo [0,49]. Valores
+maiores ou menores devem ser desconsiderados e uma mensagem apropriada deve ser
+exibida;
+6. (Tarefa 3) Escreva um programa que leia do teclado 7 valores reais correspondentes ao
+índice pluviométrico diário de uma semana. Após a leitura, o programa deve determinar o
+índice pluviométrico médio, máximo e mínimo com o respectivo dia da ocorrência;
+7. (Tarefa 3) Escreva um programa com os seguintes passos: 1) Peça ao usuário que informe
+quantos funcionários existem na empresa. 2) Instancie um array de strings e um array de
+doubles com o tamanho informado. 3) Peça ao usuário que informe o nome e o salário de
+cada funcionário e armazene o nome no array de strings e o salário no array de doubles. 4)
+Calcule a média salarial da empresa. 5) Imprima a lista de nomes/salários que estão acima
+da média salarial. Obs.: Faça o tratamento das entradas de dados. Se o usuário informar um
+salário inválido, peça para ele informar novamente. Imprima os salários com duas casas
+decimais. Os nomes devem conter ao menos 3 caracteres.
+8. Faça um programa que leia uma lista de números inteiros digitados. A lista termina quando
+o usuário digitar FIM. Ao final, o programa deve mostrar a média aritmética dos números
+lidos;
+9. (Tarefa 3) Faça um programa que leia uma frase e informe se ela é um palíndromo ou não.
+Uma frase é um palíndromo quando pode ser lida tanto da forma usual, quanto de trás para
+frente. O programa deve ignorar maiúsculas e minúsculas na avaliação. Insira as frases sem
+acentuação;
+ Dica: será necessário verificar os métodos disponíveis na classe String;
+ "Socorram-me, subi no ônibus em Marrocos”
+ "A Rita, sobre vovô, verbos atira."
+ "Olé! Maracujá, caju, caramelo."
+10. Faça um programa que monte uma matriz tridimensional 5 x 10 x 3, onde o conteúdo de
+cada elemento é igual à soma dos valores de seus índices. Imprima a matriz ao final;
+11. (Tarefa 3) Construa um programa que calcule o determinante de uma matriz 3 x 3
+fornecida pelo usuário;
+12. (Tarefa 3) Escreva um programa que calcule a soma das diagonais principal e
+secundária. O programa deve perguntar ao usuário a dimensão da matriz. Baseado na
+dimensão da matriz o programa deve pedir ao usuário para preencher os valores da matriz
+(faça um método estático que receba a referência de uma matriz e a preencha). Com a matriz
+preenchida faça outro método estático que calcule a soma das diagonais. Imprima o
+resultado.
+13. (Tarefa 3)Faça um programa que calcule o desvio padrão de um determinado número
+de amostras. O número de amostras deve ser pedido ao usuário no início do programa.
+Utilize array para armazenar as amostras. Os valores das amostras devem ser digitadas pelo
+usuário, uma a uma, como números decimais. 
+𝑠 = √
+∑(𝑋𝑖 − 𝑋̅)
+2
+𝑛 − 1
+14. Leia um conjunto de 10 strings do teclado. Coloque as 10 strings e um array. Peça ao
+usuário para digitar uma string de busca e retorne em qual posição a string de busca foi
+encontrada. Crie um método estático para leitura do array de strings e outro método para
+busca da string. Utilize passagem de parâmetros.
