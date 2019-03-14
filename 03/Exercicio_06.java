@@ -30,7 +30,10 @@ public class Exercicio_06 {
 				val = Float.parseFloat(input);
 				eixo[1][qtd] = val;
 				eixo[0][qtd] = qtd + 1;
-				qtd++;				
+				qtd++;
+
+				
+				
 			} else {
 				if(!input.equals("S"))
 					System.out.println(input + " não é um número válido! Tente novamente.");

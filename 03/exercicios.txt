@@ -11,17 +11,21 @@ novamente o valor). O usuário deve digitar S quando desejar encerrar a entrada 
 3. (Tarefa 3) Faça uma classe executável que dado um conjunto de 20 elementos numéricos,
 informe a soma de todos os números pares. Faça a validação de dados inválidos informando
 o usuário, e fazendo-o repetir a digitação.
+
 4. Dados os valores de um depósito fixo mensal e um montante desejado, determine quantos
 meses são necessários para acumular o montante desejado, considerando juros mensais de
 0,5%. Resolva com iterações (sem a fórmula de juros compostos) e imprima os valores mês
 a mês e o valor final. Obtenha as entradas do teclado.
+
 5. Faça um programa que seja capaz de imprimir no console o valor por extenso de um número
 inteiro recebido como parâmetro. O valor recebido deve estar no intervalo [0,49]. Valores
 maiores ou menores devem ser desconsiderados e uma mensagem apropriada deve ser
 exibida;
+
 6. (Tarefa 3) Escreva um programa que leia do teclado 7 valores reais correspondentes ao
 índice pluviométrico diário de uma semana. Após a leitura, o programa deve determinar o
 índice pluviométrico médio, máximo e mínimo com o respectivo dia da ocorrência;
+
 7. (Tarefa 3) Escreva um programa com os seguintes passos: 1) Peça ao usuário que informe
 quantos funcionários existem na empresa. 2) Instancie um array de strings e um array de
 doubles com o tamanho informado. 3) Peça ao usuário que informe o nome e o salário de
