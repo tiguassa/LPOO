@@ -34,9 +34,11 @@ Calcule a média salarial da empresa. 5) Imprima a lista de nomes/salários que 
 da média salarial. Obs.: Faça o tratamento das entradas de dados. Se o usuário informar um
 salário inválido, peça para ele informar novamente. Imprima os salários com duas casas
 decimais. Os nomes devem conter ao menos 3 caracteres.
+
 8. Faça um programa que leia uma lista de números inteiros digitados. A lista termina quando
 o usuário digitar FIM. Ao final, o programa deve mostrar a média aritmética dos números
 lidos;
+
 9. (Tarefa 3) Faça um programa que leia uma frase e informe se ela é um palíndromo ou não.
 Uma frase é um palíndromo quando pode ser lida tanto da forma usual, quanto de trás para
 frente. O programa deve ignorar maiúsculas e minúsculas na avaliação. Insira as frases sem
@@ -45,6 +47,7 @@ acentuação;
  "Socorram-me, subi no ônibus em Marrocos”
  "A Rita, sobre vovô, verbos atira."
  "Olé! Maracujá, caju, caramelo."
+
 10. Faça um programa que monte uma matriz tridimensional 5 x 10 x 3, onde o conteúdo de
 cada elemento é igual à soma dos valores de seus índices. Imprima a matriz ao final;
 11. (Tarefa 3) Construa um programa que calcule o determinante de uma matriz 3 x 3
