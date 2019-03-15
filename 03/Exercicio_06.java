@@ -20,25 +20,46 @@ public class Exercicio_06 {
 		String input;
 		int qtd = 0;
 		float media = 0, val, tot = 0;
-		float eixo[][] = new float[2][7];
+		float eixo[] = new float[7];
+		float minMax[][] = new float[2][2];
+		String dSemana[] = {"Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"};
 
 		do {
-			System.out.println("Insira um valor referente ao índice " + (qtd +1) + ": ");
+			System.out.println("Insira um valor referente à " + dSemana[qtd] + ": ");
 			input = scan.nextLine();
 
 			if(isNumber(input)){
 				val = Float.parseFloat(input);
-				eixo[1][qtd] = val;
-				eixo[0][qtd] = qtd + 1;
-				qtd++;
-
-				
-				
+				if(qtd == 0){
+					minMax[0][0] = val;
+					minMax[0][1] = qtd;
+					minMax[1][0] = val;
+					minMax[1][1] = qtd;
+				}
+				eixo[qtd] = val;
+				qtd++;				
+				if(val < minMax[0][0]){
+					minMax[0][0] = val;
+					minMax[0][1] = qtd;
+				}
+				if(val > minMax[1][0]){
+					minMax[1][0] = val;
+					minMax[1][1] = qtd;
+				}
+				tot += val;		
 			} else {
 				if(!input.equals("S"))
 					System.out.println(input + " não é um número válido! Tente novamente.");
 			}
-		} while(qtd < 6);
-		System.out.println("Deu boa, primeiro valor: " + eixo[0][1] + ".");
+		} while(qtd <= 6);
+
+		System.out.println("Indice pluviométrico médio: " + tot/7);
+		int aux;
+		//System.out.println(minMax[1][0]);
+		aux = Math.round( minMax[0][1] );
+		System.out.println("Indice pluviométrico mínimo: " + minMax[0][0] + " - " + dSemana[aux]);
+		aux = Math.round( minMax[1][1] ); 
+		//System.out.println(aux);
+		System.out.println("Indice pluviométrico máximo: " + minMax[1][0] + " - " + dSemana[aux-1]);
 	}
 }
