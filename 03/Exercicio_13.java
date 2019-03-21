@@ -14,8 +14,9 @@ public class Exercicio_13 {
 	public static void main(String args[]){
 		Scanner scan = new Scanner(System.in);
 		int qtdAmostras = 0;
-		float tot = 0f, media = 0f;
+		float tot = 0f, media = 0f, somatorio = 0f;
 		
+		System.out.println("\n****************************************\n");
 		Boolean val = false;
 		do {
 			System.out.println("Quantidade de amostras: ");
@@ -44,8 +45,14 @@ public class Exercicio_13 {
 
 		media = (tot/qtdAmostras);
 
+		System.out.println("");
 		for (int cont = 0 ; cont < qtdAmostras ; cont++ ) {	
 			System.out.printf("| %d -> %.2f ", cont+1, amostras[cont]);
+			somatorio += Math.pow((amostras[cont] - media), 2);
 		}
+
+		float desvioPadrao = (float) Math.sqrt((somatorio / (qtdAmostras - 1)));
+		System.out.printf("\n\nDesvio padrão: %.3f.\n", desvioPadrao);
+		System.out.println("\n****************************************\n");
 	}
 }

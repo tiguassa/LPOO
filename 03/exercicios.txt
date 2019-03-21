@@ -69,6 +69,7 @@ usuário, uma a uma, como números decimais.
 ∑(𝑋𝑖 − 𝑋̅)
 2
 𝑛 − 1
+
 14. Leia um conjunto de 10 strings do teclado. Coloque as 10 strings e um array. Peça ao
 usuário para digitar uma string de busca e retorne em qual posição a string de busca foi
 encontrada. Crie um método estático para leitura do array de strings e outro método para
