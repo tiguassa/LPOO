@@ -50,14 +50,17 @@ acentuação;
 
 10. Faça um programa que monte uma matriz tridimensional 5 x 10 x 3, onde o conteúdo de
 cada elemento é igual à soma dos valores de seus índices. Imprima a matriz ao final;
+
 11. (Tarefa 3) Construa um programa que calcule o determinante de uma matriz 3 x 3
 fornecida pelo usuário;
+
 12. (Tarefa 3) Escreva um programa que calcule a soma das diagonais principal e
 secundária. O programa deve perguntar ao usuário a dimensão da matriz. Baseado na
 dimensão da matriz o programa deve pedir ao usuário para preencher os valores da matriz
 (faça um método estático que receba a referência de uma matriz e a preencha). Com a matriz
 preenchida faça outro método estático que calcule a soma das diagonais. Imprima o
 resultado.
+
 13. (Tarefa 3)Faça um programa que calcule o desvio padrão de um determinado número
 de amostras. O número de amostras deve ser pedido ao usuário no início do programa.
 Utilize array para armazenar as amostras. Os valores das amostras devem ser digitadas pelo
