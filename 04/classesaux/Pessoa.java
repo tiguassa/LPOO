@@ -12,22 +12,22 @@ public class Pessoa{
 	private String endereco;
 	private int idade;
 
-	public setNome(String nome){
+	public void setNome(String nome){
 		this.nome = nome;
 	}
-	public setEndereco(String endereco){
+	public void setEndereco(String endereco){
 		this.endereco = endereco;
 	}
-	public setIdade(int idade){
+	public void setIdade(int idade){
 		this.idade = idade;
 	}
-	public getNome(){
+	public String getNome(){
 		return this.nome;
 	}
-	public getEndereco(){
+	public String getEndereco(){
 		return this.endereco;
 	}
-	public getIdade(){
+	public int getIdade(){
 		return this.idade;
 	}
 }
