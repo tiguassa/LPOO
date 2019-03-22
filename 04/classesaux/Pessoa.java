@@ -30,4 +30,13 @@ public class Pessoa{
 	public int getIdade(){
 		return this.idade;
 	}
+
+	public void fazAniversario(){
+		System.out.println("Feliz aniversário, " + getNome() + "!");
+		this.idade++;
+	}
+
+	public void imprime(){
+		System.out.printf("\nNome: %s\nEndereco: %s.\nIdade: %d\n", getNome(), getEndereco(), getIdade());
+	}
 }

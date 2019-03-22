@@ -30,5 +30,15 @@ public class Exercicio_02 {
 		} catch (Exception e){
 			System.exit(1);
 		}
+
+		try {
+			pessoa01.fazAniversario();
+			pessoa01.fazAniversario();
+			pessoa01.fazAniversario();
+			pessoa01.fazAniversario();
+			pessoa01.imprime();
+		} catch (Exception e){
+			System.exit(1);
+		}
 	}
 }
