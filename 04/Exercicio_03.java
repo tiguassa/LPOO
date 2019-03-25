@@ -10,7 +10,7 @@ public class Exercicio_03 {
 		Ponto3D b = new Ponto3D(x, y, z);
 		Scanner scan = new Scanner(System.in);
 
-		try{
+		try {
 			System.out.println("Insira as coordenadas do ponto A.");
 			System.out.println("x: ");
 			x = scan.nextDouble();
@@ -34,6 +34,12 @@ public class Exercicio_03 {
 			b.setX(z);
 		} catch (Exception e){
 			System.exit(1);
+		}
+
+		try {
+			System.out.println("A distância entre os dois pontos: " + a.calculaDistancia(b));
+		} catch (Exception e) {
+			System.exit(-1);
 		}
 	}
 }

@@ -43,7 +43,7 @@ public class Ponto3D {
 		return this.intensidade;
 	}
 
-	public double caluclaDistancia(Ponto3D  p){
+	public double calculaDistancia(Ponto3D  p){
 		double px = p.getX(), py = p.getY(), pz = p.getZ();
 		return Math.sqrt(Math.pow((px - getX()), 2) + Math.pow((py - getY()), 2) + Math.pow((pz - getZ()), 2));
 	}
