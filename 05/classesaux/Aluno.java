@@ -40,5 +40,11 @@ public class Aluno {
 	public void setIdade(int idade){
 		this.idade = idade;
 	}
+	public int getDiscMat(){
+		return disciplinasMatriculadas;
+	}
+	public void setDiscMat(String... disciplinasMatriculadas){
+		this.disciplinasMatriculadas = disciplinasMatriculadas;
+	}
 	
 }
