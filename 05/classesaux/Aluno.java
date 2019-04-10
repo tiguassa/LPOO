@@ -17,8 +17,8 @@ public class Aluno{
 		setPeriodo(periodo);
 		setIdade(idade);
 		this.disciplinasMatriculadas = new String[qtdDisciplinas];
-		for(String s: disciplinasMatriculadas)
-			s = "";
+		for(int cont = 0 ; cont < qtdDisciplinas ; cont++)
+			disciplinasMatriculadas[cont] = "";
 	}
 	//	Setters & Getters
 	public String getNome(){
@@ -66,12 +66,17 @@ public class Aluno{
 	}
 
 	public String imprime(){
-		String dados = "";
-		dados += "Nome do Aluno: " + getNome();
+		String dados = "-----------------------------------------------------------------";
+		dados += "\nNome do Aluno: " + getNome();
 		dados += "\nMatricula: " + getMatricula();
 		dados += "\nCurso: " + getCurso();
 		dados += "\nPeriodo: " + getPeriodo();
-		
+		dados += "\nDisciplinas Matriculadas: ";
+
+		for(String s: disciplinasMatriculadas)
+			dados += s;
+
+		dados += "\n-----------------------------------------------------------------";
 		return dados;
 	}
 	
