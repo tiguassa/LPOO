@@ -1,5 +1,7 @@
 package classesaux;
 
+import java.util.Arrays;
+
 public class Aluno{
 	
 	private String nome;
@@ -61,8 +63,17 @@ public class Aluno{
 	public String fazMatricula(String disciplina){
 		if(this.disciplinasMatriculadas.length == 0){
 			return "Este aluno não pode  ser  matriculado  em  nenhuma  disciplina,  por  favor,  fale  com  a secretaria.";
+		} else if(Arrays.asList(this.disciplinasMatriculadas).contains("")){				
+			for(int cont = 0 ; cont < this.disciplinasMatriculadas.length ; cont++){					
+				if (this.disciplinasMatriculadas[cont].equals("")){							
+					this.disciplinasMatriculadas[cont] = disciplina;
+					return "Matrícula na disciplina " + this.disciplinasMatriculadas[cont] + " executada.";
+				}
+			}	
+		} else {
+			return "Quantidade  de  disciplinas  excedida.  O  limite  de disciplinas  para  este  aluno  é  de " + this.disciplinasMatriculadas.length + " disciplina(s).  Se  desejar,  cancele a matrícula de uma das disciplinas e faça a nova matrícula·";
 		}
-		return "Foda-se";
+		return "Alguma coisa de errada aconteceu!";
 	}
 
 	public String imprime(){
@@ -71,12 +82,15 @@ public class Aluno{
 		dados += "\nMatricula: " + getMatricula();
 		dados += "\nCurso: " + getCurso();
 		dados += "\nPeriodo: " + getPeriodo();
-		dados += "\nDisciplinas Matriculadas: ";
+		dados += "\nDisciplinas Matriculadas: ";		
 
-		for(String s: disciplinasMatriculadas)
-			dados += s;
+		for(String s: this.disciplinasMatriculadas){
+			if(!(s.equals("")))
+				dados += (s + " - ");
+		}
 
 		dados += "\n-----------------------------------------------------------------";
+		
 		return dados;
 	}
 	

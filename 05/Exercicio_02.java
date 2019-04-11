@@ -8,16 +8,23 @@ public class Exercicio_02 {
 	public static void main(String args[]){
 		Scanner scan = new Scanner(System.in);
 
-		int qtdAlunos;
+		int qtdAlunos = 0;
 		char op;
 
 		System.out.println("\n========== Sistema Academico ==========");
-		System.out.printf("\nInsira a quantidade de alunos: ");
 
-		qtdAlunos = scan.nextInt();
+		while(qtdAlunos <= 0){
+			System.out.printf("\nInsira a quantidade de alunos: ");
+			qtdAlunos = scan.nextInt();
+		}
 
 		Aluno[] alunos = new Aluno[qtdAlunos];
 		alunos[0] = new Aluno("Leonardo Wrobel", "20163134", "TADS", 1, 27, 3);
+		System.out.println(alunos[0].imprime());
+		System.out.println(alunos[0].fazMatricula("LPOO"));
+		System.out.println(alunos[0].fazMatricula("REDES"));
+		System.out.println(alunos[0].fazMatricula("LPOO"));
+		System.out.println(alunos[0].fazMatricula("REDES"));
 		System.out.println(alunos[0].imprime());
 
 		/*
