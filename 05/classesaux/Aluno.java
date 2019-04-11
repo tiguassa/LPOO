@@ -76,6 +76,10 @@ public class Aluno{
 		return "Alguma coisa de errada aconteceu!";
 	}
 
+	public String cancelarMatricula(String disciplina){
+		
+	}
+
 	public String imprime(){
 		String dados = "-----------------------------------------------------------------";
 		dados += "\nNome do Aluno: " + getNome();
