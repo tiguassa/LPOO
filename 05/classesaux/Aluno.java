@@ -77,7 +77,22 @@ public class Aluno{
 	}
 
 	public String cancelarMatricula(String disciplina){
-		
+		for(int cont = 0 ; cont < this.disciplinasMatriculadas.length ; cont++){
+			if(this.disciplinasMatriculadas[cont].equals(disciplina)){
+				this.disciplinasMatriculadas[cont] = "";				
+				for(int contA = cont ; contA < this.disciplinasMatriculadas.length - 1 ; contA++){
+					if(this.disciplinasMatriculadas[contA + 1].equals("")){						
+						return "Cancelamento  da  matrícula  da  disciplina " + disciplina + " executado com sucesso.";
+					}
+					else {						
+						this.disciplinasMatriculadas[contA] = this.disciplinasMatriculadas[contA + 1];
+						this.disciplinasMatriculadas[contA + 1] = "";
+					}
+					return "Cancelamento  da  matrícula  da  disciplina " + disciplina + " executado com sucesso.";
+				}
+			}
+		}
+		return "Aluno  não  está  matriculado  na  disciplina " + disciplina +", portanto  não  é  possível  cancelar  esta  matrícula.";
 	}
 
 	public String imprime(){

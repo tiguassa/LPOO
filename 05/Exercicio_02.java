@@ -26,6 +26,8 @@ public class Exercicio_02 {
 		System.out.println(alunos[0].fazMatricula("LPOO"));
 		System.out.println(alunos[0].fazMatricula("REDES"));
 		System.out.println(alunos[0].imprime());
+		System.out.println(alunos[0].cancelarMatricula("REDES"));
+		System.out.println(alunos[0].imprime());
 
 		/*
 		while(true){
