@@ -47,7 +47,17 @@ public class Exercicio_02 {
 				break;
 			switch (op) {
 				case '1':
-					System.out.println("Cadastrar Aluno:");
+					System.out.println("Verificando...");
+					if(alunos.length > 0){
+						for(int cont = 0 ; cont < alunos.length ; cont++){
+							if(alunos[cont] == null){
+								System.out.println("Cadastrar Aluno:");
+								break;
+							}
+						}
+						System.out.println("Não existem mais vagas disponíveis.");
+						break;
+					}
 					break;
 				case '2':
 					System.out.println("Excluir aluno por nome:");

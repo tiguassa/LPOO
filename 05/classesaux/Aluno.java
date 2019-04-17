@@ -22,6 +22,13 @@ public class Aluno{
 		for(int cont = 0 ; cont < qtdDisciplinas ; cont++)
 			disciplinasMatriculadas[cont] = "";
 	}
+	public Aluno(String nome, String matricula, String curso, int periodo, int idade){
+		setNome(nome);
+		setMatricula(matricula);
+		setCurso(curso);
+		setPeriodo(periodo);
+		setIdade(idade);		
+	}
 	//	Setters & Getters
 	public String getNome(){
 		return nome;
