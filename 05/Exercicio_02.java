@@ -15,8 +15,8 @@ public class Exercicio_02 {
 		char op;
 		String nomeAux, cursoAux;
 		matricula = 1;
-
-		System.out.println(gerarMatricula());
+		Aluno alunoAux;
+		
 		System.out.println("\n========== Sistema Academico ==========");
 
 		while(qtdAlunos <= 0){
@@ -40,8 +40,8 @@ public class Exercicio_02 {
 		
 		while(true){
 			System.out.println("\nEntre com a opção desejada:");
-			System.out.println("\n1 - Cadastrar Aluno\n2 - Excluir aluno por nome\n3 - Listar Alunos\n4 - Matricular Aluno em Disciplina\n5 - Cancelar Matricula\n6 - Imprimir lista Alunos e Disciplinas Matriculadas\n9 - Fim\nOpção: ");
-			op = scan.next().charAt(0);
+			System.out.print("\n1 - Cadastrar Aluno\n2 - Excluir aluno por nome\n3 - Listar Alunos\n4 - Matricular Aluno em Disciplina\n5 - Cancelar Matricula\n6 - Imprimir lista Alunos e Disciplinas Matriculadas\n9 - Fim\nOpção: ");
+			op = scan.next().charAt(0);			
 
 			if(op == '9')
 				break;
@@ -50,16 +50,20 @@ public class Exercicio_02 {
 					System.out.println("Verificando...");
 					if(alunos.length > 0){
 						for(int cont = 0 ; cont < alunos.length ; cont++){
-							if(alunos[cont] == null){
-								System.out.println("Insira o nome do aluno: ");
-								nomeAux = scan.nextLine();
-								System.out.println("Insira a idade do aluno: ");
-								idadeAux = scan.nextInt();
-								System.out.println("Insira o nome do curso: ");
-								cursoAux = scan.nextLine();
-								System.out.println("Insira o periodo no curso: ");
-								periodoAux = scan.nextInt();
-								//alunos[cont] = new Aluno()
+							if(alunos[cont] == null){								
+								System.out.print("\nInsira o nome do aluno: ");
+								nomeAux = scan.nextLine();								
+								scan.nextLine();
+								System.out.print("\nInsira a idade do aluno: ");
+								idadeAux = Integer.parseInt(scan.nextLine());
+								System.out.print("\nInsira o nome do curso: ");
+								cursoAux = scan.next();
+								scan.nextLine();
+								System.out.print("\nInsira o periodo no curso: ");
+								periodoAux = Integer.parseInt(scan.nextLine());
+								System.out.println(nomeAux + idadeAux + cursoAux + periodoAux);
+								alunoAux = new Aluno(nomeAux, gerarMatricula(), cursoAux, periodoAux, idadeAux);
+								alunoAux.imprime();
 								System.out.println("Cadastrar Aluno:");
 								break;
 							}
