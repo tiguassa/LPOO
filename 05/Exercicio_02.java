@@ -47,7 +47,7 @@ public class Exercicio_02 {
 				break;
 			switch (op) {
 				case '1':
-					System.out.println("Verificando...");
+					scan.nextLine();
 					if(alunos.length > 0){
 						for(int cont = 0 ; cont < alunos.length ; cont++){
 							if(alunos[cont] == null){								
@@ -63,7 +63,7 @@ public class Exercicio_02 {
 								periodoAux = Integer.parseInt(scan.nextLine());
 								System.out.println(nomeAux + idadeAux + cursoAux + periodoAux);
 								alunoAux = new Aluno(nomeAux, gerarMatricula(), cursoAux, periodoAux, idadeAux);
-								alunoAux.imprime();
+								System.out.println(alunoAux.imprime());								
 								System.out.println("Cadastrar Aluno:");
 								break;
 							}
@@ -97,7 +97,9 @@ public class Exercicio_02 {
 	// MAIN - END - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 	
 	public static void cadastrarAluno(Aluno aluno){
-		
+		if(alunos.length > 0){
+						for(int cont = 0 ; cont < alunos.length ; cont++){
+							if(alunos[cont] == null){}}}
 	}
 
 	public static String gerarMatricula(){

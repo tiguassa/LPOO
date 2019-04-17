@@ -108,11 +108,13 @@ public class Aluno{
 		dados += "\nMatricula: " + getMatricula();
 		dados += "\nCurso: " + getCurso();
 		dados += "\nPeriodo: " + getPeriodo();
-		dados += "\nDisciplinas Matriculadas: ";		
+		if(this.disciplinasMatriculadas != null){
+			dados += "\nDisciplinas Matriculadas: ";
 
-		for(String s: this.disciplinasMatriculadas){
-			if(!(s.equals("")))
-				dados += (s + " - ");
+			for(String s: this.disciplinasMatriculadas){
+				if(!(s.equals("")))
+					dados += (s + " - ");
+			}			
 		}
 
 		dados += "\n-----------------------------------------------------------------";
