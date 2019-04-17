@@ -4,18 +4,16 @@ import java.util.Scanner;
 //	SistemaAcademico
 public class Exercicio_02 {
 
-	Aluno[] alunos; // Atributo problematico
+	public static Aluno[] alunos;
+	public static int matricula;
 
-	public static void cadastrarAluno(Aluno aluno){
-		if(alunos.length > 0) // É possível fazer essa verificação? Como eu acesso o array?
-			System.out.println("Deu boa");
-	}
-
+	// MAIN - START - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 	public static void main(String args[]){
 		Scanner scan = new Scanner(System.in);
-		int qtdAlunos = 0;
+		int qtdAlunos = 0, idadeAux, periodoAux;
 		char op;
-
+		String nomeAux, cursoAux;
+		matricula = 0;
 
 		System.out.println("\n========== Sistema Academico ==========");
 
@@ -51,12 +49,23 @@ public class Exercicio_02 {
 					if(alunos.length > 0){
 						for(int cont = 0 ; cont < alunos.length ; cont++){
 							if(alunos[cont] == null){
+								System.out.println("Insira o nome do aluno: ");
+								nomeAux = scan.nextLine();
+								System.out.println("Insira a idade do aluno: ");
+								idadeAux = scan.nextInt();
+								System.out.println("Insira o nome do curso: ");
+								cursoAux = scan.nextLine();
+								System.out.println("Insira o periodo no curso: ");
+								periodoAux = scan.nextInt();
+								//alunos[cont] = new Aluno()
 								System.out.println("Cadastrar Aluno:");
 								break;
 							}
 						}
 						System.out.println("Não existem mais vagas disponíveis.");
 						break;
+					} else {
+						System.out.println("A quantidade de alunos não é válida.");
 					}
 					break;
 				case '2':
@@ -78,5 +87,10 @@ public class Exercicio_02 {
 					System.out.println("Opção inválida! Tente novamente.");
 			}
 		}		
+	}
+	// MAIN - END - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	
+	public static void cadastrarAluno(Aluno aluno){
+		
 	}
 }
