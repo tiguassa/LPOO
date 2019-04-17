@@ -1,5 +1,6 @@
 import classesaux.Aluno;
 import java.util.Scanner;
+import java.util.Calendar;
 
 //	SistemaAcademico
 public class Exercicio_02 {
@@ -13,8 +14,9 @@ public class Exercicio_02 {
 		int qtdAlunos = 0, idadeAux, periodoAux;
 		char op;
 		String nomeAux, cursoAux;
-		matricula = 0;
+		matricula = 1;
 
+		System.out.println(gerarMatricula());
 		System.out.println("\n========== Sistema Academico ==========");
 
 		while(qtdAlunos <= 0){
@@ -92,5 +94,12 @@ public class Exercicio_02 {
 	
 	public static void cadastrarAluno(Aluno aluno){
 		
+	}
+
+	public static String gerarMatricula(){
+		return ("GRR" + String.valueOf(Calendar.getInstance().get(Calendar.YEAR)) + String.format("%04d", matricula));
+		// https://stackoverflow.com/questions/275711/add-leading-zeroes-to-number-in-java
+		// https://stackoverflow.com/questions/5071040/java-convert-integer-to-string/5071064
+		// https://stackoverflow.com/questions/136419/get-integer-value-of-the-current-year-in-java
 	}
 }
