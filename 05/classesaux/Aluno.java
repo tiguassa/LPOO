@@ -69,18 +69,18 @@ public class Aluno{
 
 	public String fazMatricula(String disciplina){
 		if(this.disciplinasMatriculadas.length == 0){
-			return "Este aluno não pode  ser  matriculado  em  nenhuma  disciplina,  por  favor,  fale  com  a secretaria.";
+			return " - Este aluno não pode  ser  matriculado  em  nenhuma  disciplina,  por  favor,  fale  com  a secretaria.";
 		} else if(Arrays.asList(this.disciplinasMatriculadas).contains("")){				
 			for(int cont = 0 ; cont < this.disciplinasMatriculadas.length ; cont++){					
 				if (this.disciplinasMatriculadas[cont].equals("")){							
 					this.disciplinasMatriculadas[cont] = disciplina;
-					return "Matrícula na disciplina " + this.disciplinasMatriculadas[cont] + " executada.";
+					return " - Matrícula na disciplina " + this.disciplinasMatriculadas[cont] + " executada.";
 				}
 			}	
 		} else {
-			return "Quantidade  de  disciplinas  excedida.  O  limite  de disciplinas  para  este  aluno  é  de " + this.disciplinasMatriculadas.length + " disciplina(s).  Se  desejar,  cancele a matrícula de uma das disciplinas e faça a nova matrícula·";
+			return " - Quantidade  de  disciplinas  excedida.  O  limite  de disciplinas  para  este  aluno  é  de " + this.disciplinasMatriculadas.length + " disciplina(s).  Se  desejar,  cancele a matrícula de uma das disciplinas e faça a nova matrícula·";
 		}
-		return "Alguma coisa de errada aconteceu!";
+		return " - Alguma coisa de errada aconteceu!";
 	}
 
 	public String cancelarMatricula(String disciplina){
@@ -89,17 +89,17 @@ public class Aluno{
 				this.disciplinasMatriculadas[cont] = "";				
 				for(int contA = cont ; contA < this.disciplinasMatriculadas.length - 1 ; contA++){
 					if(this.disciplinasMatriculadas[contA + 1].equals("")){						
-						return "Cancelamento  da  matrícula  da  disciplina " + disciplina + " executado com sucesso.";
+						return " - Cancelamento  da  matrícula  da  disciplina " + disciplina + " executado com sucesso.";
 					}
 					else {						
 						this.disciplinasMatriculadas[contA] = this.disciplinasMatriculadas[contA + 1];
 						this.disciplinasMatriculadas[contA + 1] = "";
 					}
-					return "Cancelamento  da  matrícula  da  disciplina " + disciplina + " executado com sucesso.";
+					return " - Cancelamento  da  matrícula  da  disciplina " + disciplina + " executado com sucesso.";
 				}
 			}
 		}
-		return "Aluno  não  está  matriculado  na  disciplina " + disciplina +", portanto  não  é  possível  cancelar  esta  matrícula.";
+		return " - Aluno  não  está  matriculado  na  disciplina " + disciplina +", portanto  não  é  possível  cancelar  esta  matrícula.";
 	}
 
 	public void liberarDisciplinas(int qtdDisciplinas){

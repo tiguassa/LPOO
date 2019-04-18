@@ -118,7 +118,7 @@ public class Exercicio_02 {
 							if(alunos[cont] != null){
 								if(alunos[cont].getNome().equals(nomeAux)){										
 									if(alunos[cont].getDiscMat() == null){
-										System.out.println("Quantas disciplinas o aluno pode cursar?");
+										System.out.print("\nQuantas disciplinas o aluno pode cursar?");
 										int qtdDisciplinasAux = scan.nextInt();
 										alunos[cont].liberarDisciplinas(qtdDisciplinasAux);
 									}
@@ -130,7 +130,26 @@ public class Exercicio_02 {
 					}
 					break;
 				case '5':
-					System.out.println("Cancelar Matricula:");
+					if(qtdEst == 0){
+						System.out.println(" - Ainda não existem alunos matriculados.");
+					} else {
+						System.out.print("\nInsira o nome do aluno: ");
+						nomeAux = scan.next();
+						scan.nextLine();
+						System.out.print("\nInsira o nome da disciplina: ");
+						disciplinaAux = scan.next();
+
+						for(int cont = 0 ; cont < qtdEst ; cont++){
+							if(alunos[cont] != null){
+								if(alunos[cont].getNome().equals(nomeAux)){
+									System.out.println(cancelarMatricula(alunos[cont], disciplinaAux));	
+									break;
+								}				
+							}
+						}	
+						System.out.println(" - Ocorreu algum erro.");
+
+					}
 					break;
 				case '6':
 					System.out.println("Imprimir lista Alunos e Disciplinas Matriculadas:");
@@ -199,6 +218,10 @@ public class Exercicio_02 {
 
 	public static String matricularAlunoEmDisciplina(Aluno aluno, String disciplina){		
 		return aluno.fazMatricula(disciplina);
+	}
+
+	public static String cancelarMatricula(Aluno aluno, String disciplina){
+		return aluno.cancelarMatricula(disciplina);
 	}
 
 	public static String gerarMatricula(){
