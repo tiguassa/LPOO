@@ -130,6 +130,7 @@ public class Exercicio_02 {
 					}
 					break;
 				case '5':
+					//sucesso = false;
 					if(qtdEst == 0){
 						System.out.println(" - Ainda não existem alunos matriculados.");
 					} else {
@@ -146,13 +147,11 @@ public class Exercicio_02 {
 									break;
 								}				
 							}
-						}	
-						System.out.println(" - Ocorreu algum erro.");
-
+						}						
 					}
 					break;
 				case '6':
-					System.out.println("Imprimir lista Alunos e Disciplinas Matriculadas:");
+					System.out.println(imprimirListaDeAlunoseDisciplinas());
 					break;
 				case '8':
 					System.out.println("\nVariaveis - - - - - ");
@@ -220,8 +219,33 @@ public class Exercicio_02 {
 		return aluno.fazMatricula(disciplina);
 	}
 
-	public static String cancelarMatricula(Aluno aluno, String disciplina){
+	public static String cancelarMatricula(Aluno aluno, String disciplina){		
 		return aluno.cancelarMatricula(disciplina);
+	}
+
+	public static String imprimirListaDeAlunoseDisciplinas(){
+		if(qtdEst == 0){			
+			return " - Ainda não existem alunos matriculados.";
+		} else {
+			String listaAlunos = "";
+			listaAlunos += " - - Lista de Alunos - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n";
+			for(int cont = 0 ; cont < qtdEst ; cont++){
+				listaAlunos += ("\n - " + alunos[cont].getNome() + "\n");
+				if(alunos[cont].getDiscMat() == null){
+					listaAlunos += "\t- Nenhuma disciplina matriculada.\n\n";
+				} else {
+					if(alunos[cont].getDiscMat()[0].equals("")){
+						listaAlunos += "\t- Nenhuma disciplina matriculada.\n\n";
+					} else {
+						String disciplinas[] = alunos[cont].getDiscMat();
+						for(int contA = 0 ; !(alunos[cont].getDiscMat()[contA].equals("")) ; contA++){
+							listaAlunos += ("\t- " + disciplinas[contA] + "\n");
+						}
+					}
+				}
+			}
+			return listaAlunos;		
+		}
 	}
 
 	public static String gerarMatricula(){
