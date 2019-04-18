@@ -6,7 +6,7 @@ import java.util.Calendar;
 public class Exercicio_02 {
 
 	public static Aluno[] alunos;
-	public static int matricula;
+	public static int matricula, qtdEst;
 	public static Boolean sucesso;
 
 	// MAIN - START - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -15,7 +15,8 @@ public class Exercicio_02 {
 		int qtdAlunos = 0, idadeAux, periodoAux;
 		char op;
 		String nomeAux, cursoAux;
-		matricula = 1;
+		matricula = 0;
+		qtdEst = 0;
 		Aluno alunoAux;
 		
 		System.out.println("\n========== Sistema Academico ==========");
@@ -28,7 +29,7 @@ public class Exercicio_02 {
 		alunos = new Aluno[qtdAlunos];
 		
 		while(true){
-			System.out.println("\nEntre com a opção desejada:");
+			System.out.println("\n\tEntre com a opção desejada:");
 			System.out.print("\n1 - Cadastrar Aluno\n2 - Excluir aluno por nome\n3 - Listar Alunos\n4 - Matricular Aluno em Disciplina\n5 - Cancelar Matricula\n6 - Imprimir lista Alunos e Disciplinas Matriculadas\n9 - Fim\nOpção: ");
 			op = scan.next().charAt(0);			
 
@@ -60,34 +61,48 @@ public class Exercicio_02 {
 							}
 						}	
 						if(!sucesso)
-							System.out.println("Todas as vagas já foram ocupadas.");
+							System.out.println(" - Todas as vagas já foram ocupadas.");
 					} else {
-						System.out.println("Não existem vagas disponíveis. Inicialize o programa novamente.");
+						System.out.println(" - Não existem vagas disponíveis. Inicialize o programa novamente.");
 					}
 					break;
 				case '2':
 					sucesso = false;
-					scan.nextLine();					
-					if(alunos.length > 0){
+					//scan.nextLine();					
+					if(qtdEst > 0){
+						System.out.print("\nInsira o nome do aluno: ");
+						nomeAux = scan.next();								
+						// scan.nextLine(); // Como resolver isso aqui?						
+						excluirAlunoPorNome(nomeAux);								
+						//break;
+						/*
 						for(int cont = 0 ; cont < alunos.length ; cont++){
 							if(alunos[cont] == null){
 
 								System.out.print("\nInsira o nome do aluno: ");
-								nomeAux = scan.nextLine();								
-								scan.nextLine(); // Como resolver isso aqui?								
+								nomeAux = scan.next();								
+								// scan.nextLine(); // Como resolver isso aqui?								
 								
 								excluirAlunoPorNome(nomeAux);								
 								break;
 							}
 						}	
+						*/
 						if(!sucesso)
-							System.out.println("O nome inserido não foi encontrado.");
+							System.out.println(" - O nome inserido não foi encontrado.");
 					} else {
-						System.out.println("Não existem vagas disponíveis. Inicialize o programa novamente.");
+						System.out.println(" - Ainda não existem alunos matriculados.");
 					}
 					break;
 				case '3':
-					System.out.println("Listar Alunos:");
+					Aluno[] alunosLista = listarAlunos();
+					if(alunosLista != null){
+						System.out.println("\nAlunos(" + qtdEst + "/" + qtdAlunos + ")");
+						for(int cont = 0 ; cont < qtdEst ; cont++){
+							System.out.println(alunosLista[cont].imprime());
+						}
+						//System.out.println("Listar Alunos:");						
+					}
 					break;
 				case '4':
 					System.out.println("Matricular Aluno em Disciplina:");
@@ -98,8 +113,13 @@ public class Exercicio_02 {
 				case '6':
 					System.out.println("Imprimir lista Alunos e Disciplinas Matriculadas:");
 					break;
+				case '8':
+					System.out.println("\nVariaveis - - - - - ");
+					System.out.println("matricula:" + matricula);
+					System.out.println("qtdEst:" + qtdEst);					
+					break;
 				default:
-					System.out.println("Opção inválida! Tente novamente.");
+					System.out.println(" - Opção inválida! Tente novamente.");
 			}
 		}		
 	}
@@ -111,30 +131,53 @@ public class Exercicio_02 {
 				if(alunos[cont] == null){
 					alunos[cont] = aluno;
 					System.out.println("O aluno " + aluno.getNome() + " foi matriculado.");	
-					sucesso = true;				
+					sucesso = true;
+					qtdEst++;			
 					return;
 				}
 			}			
 		} else {
-			System.out.println("Não existem vagas disponíveis. Inicialize o programa novamente.");
+			System.out.println(" - Não existem vagas disponíveis. Inicialize o programa novamente.");
 		}
 	}
 
 	public static void excluirAlunoPorNome(String nomeAluno){
-		if(alunos.length > 0){
-			for(int cont = 0 ; cont < alunos.length ; cont++){
-				if(alunos[cont].getNome().equals(nomeAluno)){
-					System.out.println("Aluno encontrado!");
-					sucesso = true;				
-					return;
-				}
-			}			
+		if(qtdEst == 0){
+			System.out.println("Ainda não existem alunos matriculados.");
+			return;
 		} else {
-			System.out.println("Não existem vagas disponíveis. Inicialize o programa novamente.");
+			for(int cont = 0 ; cont < alunos.length ; cont++){
+				if(alunos[cont] != null){
+					if(alunos[cont].getNome().equals(nomeAluno)){
+						alunos[cont] = null;
+						for(int contA = cont ; contA < qtdEst ; contA++)
+							alunos[contA] = alunos[contA + 1];
+						alunos[qtdEst] = null;
+					}
+					System.out.println(" - Aluno excluido!");
+					sucesso = true;	
+					qtdEst--;			
+					return;
+				}					
+			}
 		}
+
+	}
+	
+	public static Aluno[] listarAlunos(){
+		if(qtdEst == 0){
+			System.out.println(" - Ainda não existem alunos matriculados.");
+			return null;
+		}
+		Aluno[] result = new Aluno[qtdEst];
+		for(int cont = 0 ; cont < qtdEst ; cont++){
+			result[cont] = alunos[cont];
+		}
+		return alunos;
 	}
 
 	public static String gerarMatricula(){
+		matricula++;
 		return ("GRR" + String.valueOf(Calendar.getInstance().get(Calendar.YEAR)) + String.format("%04d", matricula));
 		// https://stackoverflow.com/questions/275711/add-leading-zeroes-to-number-in-java
 		// https://stackoverflow.com/questions/5071040/java-convert-integer-to-string/5071064
