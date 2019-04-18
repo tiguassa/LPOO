@@ -65,9 +65,26 @@ public class Exercicio_02 {
 						System.out.println("Não existem vagas disponíveis. Inicialize o programa novamente.");
 					}
 					break;
-
 				case '2':
-					System.out.println("Excluir aluno por nome:");
+					sucesso = false;
+					scan.nextLine();					
+					if(alunos.length > 0){
+						for(int cont = 0 ; cont < alunos.length ; cont++){
+							if(alunos[cont] == null){
+
+								System.out.print("\nInsira o nome do aluno: ");
+								nomeAux = scan.nextLine();								
+								scan.nextLine(); // Como resolver isso aqui?								
+								
+								excluirAlunoPorNome(nomeAux);								
+								break;
+							}
+						}	
+						if(!sucesso)
+							System.out.println("O nome inserido não foi encontrado.");
+					} else {
+						System.out.println("Não existem vagas disponíveis. Inicialize o programa novamente.");
+					}
 					break;
 				case '3':
 					System.out.println("Listar Alunos:");
@@ -94,6 +111,20 @@ public class Exercicio_02 {
 				if(alunos[cont] == null){
 					alunos[cont] = aluno;
 					System.out.println("O aluno " + aluno.getNome() + " foi matriculado.");	
+					sucesso = true;				
+					return;
+				}
+			}			
+		} else {
+			System.out.println("Não existem vagas disponíveis. Inicialize o programa novamente.");
+		}
+	}
+
+	public static void excluirAlunoPorNome(String nomeAluno){
+		if(alunos.length > 0){
+			for(int cont = 0 ; cont < alunos.length ; cont++){
+				if(alunos[cont].getNome().equals(nomeAluno)){
+					System.out.println("Aluno encontrado!");
 					sucesso = true;				
 					return;
 				}
