@@ -7,6 +7,7 @@ public class Exercicio_02 {
 
 	public static Aluno[] alunos;
 	public static int matricula;
+	public static Boolean sucesso;
 
 	// MAIN - START - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 	public static void main(String args[]){
@@ -25,18 +26,6 @@ public class Exercicio_02 {
 		}
 
 		alunos = new Aluno[qtdAlunos];
-
-		/*
-		alunos[0] = new Aluno("Leonardo Wrobel", "20163134", "TADS", 1, 27, 3);
-		System.out.println(alunos[0].imprime());
-		System.out.println(alunos[0].fazMatricula("LPOO"));
-		System.out.println(alunos[0].fazMatricula("REDES"));
-		System.out.println(alunos[0].fazMatricula("LPOO"));
-		System.out.println(alunos[0].fazMatricula("REDES"));
-		System.out.println(alunos[0].imprime());
-		System.out.println(alunos[0].cancelarMatricula("REDES"));
-		System.out.println(alunos[0].imprime());
-		*/
 		
 		while(true){
 			System.out.println("\nEntre com a opção desejada:");
@@ -47,33 +36,36 @@ public class Exercicio_02 {
 				break;
 			switch (op) {
 				case '1':
-					scan.nextLine();
+					sucesso = false;
+					scan.nextLine();					
 					if(alunos.length > 0){
 						for(int cont = 0 ; cont < alunos.length ; cont++){
-							if(alunos[cont] == null){								
+							if(alunos[cont] == null){
+
 								System.out.print("\nInsira o nome do aluno: ");
 								nomeAux = scan.nextLine();								
-								scan.nextLine();
+								scan.nextLine(); // Como resolver isso aqui?
 								System.out.print("\nInsira a idade do aluno: ");
 								idadeAux = Integer.parseInt(scan.nextLine());
 								System.out.print("\nInsira o nome do curso: ");
 								cursoAux = scan.next();
 								scan.nextLine();
 								System.out.print("\nInsira o periodo no curso: ");
-								periodoAux = Integer.parseInt(scan.nextLine());
-								System.out.println(nomeAux + idadeAux + cursoAux + periodoAux);
+								periodoAux = Integer.parseInt(scan.nextLine());								
 								alunoAux = new Aluno(nomeAux, gerarMatricula(), cursoAux, periodoAux, idadeAux);
-								System.out.println(alunoAux.imprime());								
-								System.out.println("Cadastrar Aluno:");
+								
+								cadastrarAluno(alunoAux);
+								//System.out.println(alunos[0].imprime());
 								break;
 							}
-						}
-						System.out.println("Não existem mais vagas disponíveis.");
-						break;
+						}	
+						if(!sucesso)
+							System.out.println("Todas as vagas já foram ocupadas.");
 					} else {
-						System.out.println("A quantidade de alunos não é válida.");
+						System.out.println("Não existem vagas disponíveis. Inicialize o programa novamente.");
 					}
 					break;
+
 				case '2':
 					System.out.println("Excluir aluno por nome:");
 					break;
@@ -98,8 +90,17 @@ public class Exercicio_02 {
 	
 	public static void cadastrarAluno(Aluno aluno){
 		if(alunos.length > 0){
-						for(int cont = 0 ; cont < alunos.length ; cont++){
-							if(alunos[cont] == null){}}}
+			for(int cont = 0 ; cont < alunos.length ; cont++){
+				if(alunos[cont] == null){
+					alunos[cont] = aluno;
+					System.out.println("O aluno " + aluno.getNome() + " foi matriculado.");	
+					sucesso = true;				
+					return;
+				}
+			}			
+		} else {
+			System.out.println("Não existem vagas disponíveis. Inicialize o programa novamente.");
+		}
 	}
 
 	public static String gerarMatricula(){
