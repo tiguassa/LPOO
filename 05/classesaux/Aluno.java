@@ -102,6 +102,12 @@ public class Aluno{
 		return "Aluno  não  está  matriculado  na  disciplina " + disciplina +", portanto  não  é  possível  cancelar  esta  matrícula.";
 	}
 
+	public void liberarDisciplinas(int qtdDisciplinas){
+		this.disciplinasMatriculadas = new String[qtdDisciplinas];
+		for(int cont = 0 ; cont < qtdDisciplinas ; cont++)
+			disciplinasMatriculadas[cont] = "";
+	}
+
 	public String imprime(){
 		String dados = "-----------------------------------------------------------------";
 		dados += "\nNome do Aluno: " + getNome();

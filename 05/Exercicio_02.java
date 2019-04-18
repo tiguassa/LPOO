@@ -14,7 +14,7 @@ public class Exercicio_02 {
 		Scanner scan = new Scanner(System.in);
 		int qtdAlunos = 0, idadeAux, periodoAux;
 		char op;
-		String nomeAux, cursoAux;
+		String nomeAux, cursoAux, disciplinaAux;
 		matricula = 0;
 		qtdEst = 0;
 		Aluno alunoAux;
@@ -105,7 +105,29 @@ public class Exercicio_02 {
 					}
 					break;
 				case '4':
-					System.out.println("Matricular Aluno em Disciplina:");
+					if(qtdEst == 0){
+						System.out.println(" - Ainda não existem alunos matriculados.");
+					} else {
+						System.out.print("\nInsira o nome do aluno: ");
+						nomeAux = scan.next();
+						scan.nextLine();
+						System.out.print("\nInsira o nome da disciplina: ");
+						disciplinaAux = scan.next();
+
+						for(int cont = 0 ; cont < qtdEst ; cont++){
+							if(alunos[cont] != null){
+								if(alunos[cont].getNome().equals(nomeAux)){										
+									if(alunos[cont].getDiscMat() == null){
+										System.out.println("Quantas disciplinas o aluno pode cursar?");
+										int qtdDisciplinasAux = scan.nextInt();
+										alunos[cont].liberarDisciplinas(qtdDisciplinasAux);
+									}
+									System.out.println(matricularAlunoEmDisciplina(alunos[cont], disciplinaAux));	
+								}				
+							}
+						}		
+
+					}
 					break;
 				case '5':
 					System.out.println("Cancelar Matricula:");
@@ -130,7 +152,7 @@ public class Exercicio_02 {
 			for(int cont = 0 ; cont < alunos.length ; cont++){
 				if(alunos[cont] == null){
 					alunos[cont] = aluno;
-					System.out.println("O aluno " + aluno.getNome() + " foi matriculado.");	
+					System.out.println(" - O aluno " + aluno.getNome() + " foi matriculado.");	
 					sucesso = true;
 					qtdEst++;			
 					return;
@@ -161,7 +183,6 @@ public class Exercicio_02 {
 				}					
 			}
 		}
-
 	}
 	
 	public static Aluno[] listarAlunos(){
@@ -174,6 +195,10 @@ public class Exercicio_02 {
 			result[cont] = alunos[cont];
 		}
 		return alunos;
+	}
+
+	public static String matricularAlunoEmDisciplina(Aluno aluno, String disciplina){		
+		return aluno.fazMatricula(disciplina);
 	}
 
 	public static String gerarMatricula(){
