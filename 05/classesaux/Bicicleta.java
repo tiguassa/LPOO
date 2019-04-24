@@ -6,6 +6,18 @@ public class Bicicleta {
 	private int marcha;
 	private int maxMarchas;
 
+	public Bicicleta(int maxMarchas){
+		setMaxMarchas(maxMarchas);
+		setVelocidade(0);
+		setCadencia(0);
+	}
+
+	public Bicicleta(){
+		setMaxMarchas(18);
+		setVelocidade(0);
+		setCadencia(0);
+	}
+
 	public int getCadencia(){
 		return cadencia;
 	}
@@ -18,7 +30,7 @@ public class Bicicleta {
 		return velocidade;
 	}
 
-	public void setVelocidade(velocidade){
+	public void setVelocidade(int velocidade){
 		this.velocidade = velocidade;
 	}
 
@@ -27,14 +39,34 @@ public class Bicicleta {
 	}
 
 	public void setMarcha(int marcha){
-		this.marcha = marcha;
+		if(marcha > maxMarchas || marcha < 1){
+			System.out.println("Marcha inválida!");
+		} else {
+			this.marcha = marcha;
+		}
 	}
 
-	public int getMaxMarcha(){
+	public int getMaxMarchas(){
 		return maxMarchas;
 	}
 
-	public void setMaxMarcha(int maxMarcha){
-		this.maxMarcha = maxMarcha;
+	public void setMaxMarchas(int maxMarchas){
+		this.maxMarchas = maxMarchas;
+	}
+
+	public void aumentarVelocidade(int incremento){
+		velocidade += incremento;
+	}
+
+	public void acionarFreios(int decremento){
+		if(decremento > velocidade){
+			velocidade = 0;
+		} else {
+			velocidade -= decremento;
+		}
+	}
+
+	public void printStates(){
+		System.out.println("Cadencia: " + cadencia + ". Velocidade: " + velocidade + ". Marcha = " + marcha + ".");
 	}
 }
