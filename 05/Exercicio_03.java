@@ -48,4 +48,5 @@ public class Exercicio_03 {
 	- Executar com a classe Ponto3DPublic não alterou em nada a compilação e a execução do programa.
 	- Executar com a classe Ponto3DProtected gerou erros de compilação nos trechos de código onde se tenta fazer
 	o acesso aos respectivos métodos.
+	- 
 */
