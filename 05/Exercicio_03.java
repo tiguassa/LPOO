@@ -1,4 +1,4 @@
-import classesaux.Ponto3DProtected;
+import classesaux.Ponto3DPrivate;
 import java.util.Scanner;
 
 public class Exercicio_03 {
@@ -6,8 +6,8 @@ public class Exercicio_03 {
 		String corAux = "";
 		double x = 0, y = 0, z = 0;
 		float intensidadeAux = 0f;
-		Ponto3DProtected a = new Ponto3DProtected(x, y, z);
-		Ponto3DProtected b = new Ponto3DProtected(x, y, z);
+		Ponto3DPrivate a = new Ponto3DPrivate(x, y, z);
+		Ponto3DPrivate b = new Ponto3DPrivate(x, y, z);
 		Scanner scan = new Scanner(System.in);
 
 		try {
@@ -46,7 +46,9 @@ public class Exercicio_03 {
 
 /*
 	- Executar com a classe Ponto3DPublic não alterou em nada a compilação e a execução do programa.
-	- Executar com a classe Ponto3DProtected gerou erros de compilação nos trechos de código onde se tenta fazer
+	- Executar com a classe Ponto3DProtected gerou erros de compilação em Exercicio_03 nos trechos de código onde se tenta fazer
 	o acesso aos respectivos métodos.
-	- 
+	- Executar com a classe Ponto3DPrivate gerou erros de compilação em Exercicio_03 nos trechos de código onde se tenta fazer
+	o acesso aos respectivos métodos.
+	- Em nenhum dos casos, houve erro de compilação nas classes Ponto3D.
 */
