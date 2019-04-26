@@ -7,15 +7,15 @@ public class Bicicleta {
 	private int maxMarchas;
 
 	public Bicicleta(int maxMarchas){
-		setMaxMarchas(maxMarchas);
-		setVelocidade(0);
-		setCadencia(0);
+		this.maxMarchas = maxMarchas;
+		velocidade = 0;
+		cadencia = 0;
 	}
 
 	public Bicicleta(){
-		setMaxMarchas(18);
-		setVelocidade(0);
-		setCadencia(0);
+		maxMarchas = 18;
+		velocidade = 0;
+		cadencia = 0;
 	}
 
 	public int getCadencia(){
