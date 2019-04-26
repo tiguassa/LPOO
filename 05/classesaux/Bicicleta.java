@@ -51,7 +51,11 @@ public class Bicicleta {
 	}
 
 	public void setMaxMarchas(int maxMarchas){
-		this.maxMarchas = maxMarchas;
+		if(maxMarchas < 1){
+			System.out.println("Quantidade maxima de marchas é inválida!");
+		} else {
+			this.maxMarchas = maxMarchas;
+		}
 	}
 
 	public void aumentarVelocidade(int incremento){

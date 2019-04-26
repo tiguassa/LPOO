@@ -1,0 +1,7 @@
+import classesaux.Conversor;
+
+public class Exercicio_08 {
+	public static void main(String args[]){
+		System.out.println("20C = " + Conversor.c2f(20) + "F");
+	}
+}
