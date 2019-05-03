@@ -1,6 +1,6 @@
 package classesaux;
 
-public class Funcionario {
+public abstract class Funcionario {
 	private String nome;
 	private String cpf;
 	private float salario;
@@ -43,4 +43,5 @@ public class Funcionario {
         return (this.nome.equals(that.nome)) && (this.cpf == that.cpf);
     }
 
+    public abstract float getBonus();
 }
