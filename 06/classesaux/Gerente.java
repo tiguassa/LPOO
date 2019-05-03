@@ -11,6 +11,6 @@ public class Gerente extends Funcionario {
 	}
 
 	public float getBonus(){
-		return (2 * getSalario() + (100 * funcionarios.size()));
+		return (2f * getSalario() + (100f * funcionarios.size()));
 	}
 }

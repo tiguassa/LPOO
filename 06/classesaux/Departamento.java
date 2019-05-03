@@ -7,11 +7,11 @@ public class Departamento {
 		this.nome = nome;
 	}
 
-	public setNome(String nome){
+	public void setNome(String nome){
 		this.nome = nome;
 	}
 
-	public getNome(){
+	public String getNome(){
 		return nome;
 	}
 }

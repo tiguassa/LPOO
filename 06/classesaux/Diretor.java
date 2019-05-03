@@ -11,6 +11,6 @@ public class Diretor extends Funcionario {
 	}
 
 	public float getBonus(){
-		return (4 * getSalario() + (300 * departamentos.size()));
+		return (4f * getSalario() + (300f * departamentos.size()));
 	}
 }
