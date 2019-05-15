@@ -1,10 +1,12 @@
 package classesaux;
-import java.util.Scanner;
 
-public class SistemaRH {
+import java.util.InputMismatchException;
+
+public class SistemaRH {	
+
 	public static void imprimeMenu(){
 		System.out.println("+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = +");
-		System.out.println("|                                RH - Menu                            |");
+		System.out.println("|                            RH - Menu                                |");
 		System.out.println("+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = +");
 		System.out.println("| Entre com a opção desejada:                                         |");
 		System.out.println("+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +");
@@ -22,7 +24,7 @@ public class SistemaRH {
 
 	public static void imprimeMenuFuncionario(){
 		System.out.println("+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = +");
-		System.out.println("|                                RH - Menu [Funcionarios]             |");
+		System.out.println("|                            RH - Menu [Funcionarios]                 |");
 		System.out.println("+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = +");
 		System.out.println("| Entre com a opção desejada:                                         |");
 		System.out.println("+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +");
@@ -39,7 +41,7 @@ public class SistemaRH {
 
 	public static void imprimeMenuDepartamento(){
 		System.out.println("+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = +");
-		System.out.println("|                                RH - Menu [Funcionarios]             |");
+		System.out.println("|                          RH - Menu [Funcionarios]                   |");
 		System.out.println("+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = +");
 		System.out.println("| Entre com a opção desejada:                                         |");
 		System.out.println("+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +");
@@ -54,9 +56,6 @@ public class SistemaRH {
 		System.out.print("        Opção: ");		
 	}
 
-	public static String[] userInputNomeCpf(){
-
-	}
 	/*
 	public static Funcionario cadastrarFuncionario(){
 
@@ -67,6 +66,14 @@ public class SistemaRH {
 	}
 
 	// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+	public static boolean isNome(String nome){
+		String regex = "^[a-zA-Z]+$";		
+		if(!nome.matches(regex) || nome.length() < 3){
+			return false;			
+		} else {
+			return true;
+		}
+	}
 
 	public static boolean isCPF(String CPF) {
         // considera-se erro CPF's formados por uma sequencia de numeros iguais
@@ -122,6 +129,7 @@ public class SistemaRH {
 	    } catch (InputMismatchException erro) {
 	        return(false);
 	    }
+	    // REF:
 		// https://www.devmedia.com.br/validando-o-cpf-em-uma-aplicacao-java/22097
 	} 
 }

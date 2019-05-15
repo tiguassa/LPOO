@@ -8,6 +8,7 @@ public class Exercicio_03 {
 		ArrayList<Funcionario> funcionarios;
 
 		char op;
+		String nomeAux = "";
 		
 		while(true){
 			SistemaRH.imprimeMenu();
@@ -23,7 +24,16 @@ public class Exercicio_03 {
 							break;
 						switch(op){
 							case '1':
-								
+								nomeAux = "";
+								scan.nextLine();
+								System.out.print("\nInsira um nome: ");
+								nomeAux = scan.nextLine();
+								while(!SistemaRH.isNome(nomeAux)){
+									System.out.print("\nInsira um nome valido: ");
+									nomeAux = scan.nextLine();
+								}
+								System.out.println("Nome: " + nomeAux);
+
 								break;
 							case '2':
 
