@@ -26,7 +26,7 @@ public class Exercicio_03 {
 							case '1':
 								nomeAux = "";
 								scan.nextLine();
-								System.out.print("\nInsira um nome: ");
+								System.out.print("\nNome: ");
 								nomeAux = scan.nextLine();
 								while(!SistemaRH.isNome(nomeAux)){
 									System.out.print("\nInsira um nome valido: ");
@@ -35,7 +35,7 @@ public class Exercicio_03 {
 								System.out.println("Nome: " + nomeAux);
 								cpfAux = "";
 								//scan.nextLine();
-								System.out.print("\nInsira o CPF: ");
+								System.out.print("\nCPF(apenas numeros): ");
 								cpfAux = scan.nextLine();
 								while(!SistemaRH.isCPF(cpfAux)){
 									System.out.print("\nInsira um CPF valido: ");
