@@ -68,7 +68,7 @@ public class SistemaRH {
 	// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 	public static boolean isNome(String nome){
 		//String regex = "^[a-zA-Z]+$";	
-		String regex = "^[\\p{L} .'-]+$";	
+		String regex = "^[\\p{L} .'-]+$"; // https://stackoverflow.com/questions/15805555/java-regex-to-validate-full-name-allow-only-spaces-and-letters
 		if(!nome.matches(regex) || nome.length() < 3){
 			return false;			
 		} else {
