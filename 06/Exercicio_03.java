@@ -8,7 +8,7 @@ public class Exercicio_03 {
 		ArrayList<Funcionario> funcionarios;
 
 		char op;
-		String nomeAux = "";
+		String nomeAux = "", cpfAux = "";
 		
 		while(true){
 			SistemaRH.imprimeMenu();
@@ -33,6 +33,15 @@ public class Exercicio_03 {
 									nomeAux = scan.nextLine();
 								}
 								System.out.println("Nome: " + nomeAux);
+								cpfAux = "";
+								//scan.nextLine();
+								System.out.print("\nInsira o CPF: ");
+								cpfAux = scan.nextLine();
+								while(!SistemaRH.isCPF(cpfAux)){
+									System.out.print("\nInsira um CPF valido: ");
+									cpfAux = scan.nextLine();
+								}
+								System.out.println("CPF: " + cpfAux);
 
 								break;
 							case '2':

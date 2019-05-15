@@ -67,7 +67,8 @@ public class SistemaRH {
 
 	// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 	public static boolean isNome(String nome){
-		String regex = "^[a-zA-Z]+$";		
+		//String regex = "^[a-zA-Z]+$";	
+		String regex = "^[\\p{L} .'-]+$";	
 		if(!nome.matches(regex) || nome.length() < 3){
 			return false;			
 		} else {
