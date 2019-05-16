@@ -56,11 +56,40 @@ public class SistemaRH {
 		System.out.print("        Opção: ");		
 	}
 
-	/*
-	public static Funcionario cadastrarFuncionario(){
-
+	public static void imprimeCargos(){
+		System.out.println("        Cargo:");			
+		System.out.println("        1 - Analista");			
+		System.out.println("        2 - Auxiliar de Limpeza");			
+		System.out.println("        3 - Diretor");			
+		System.out.println("        4 - Gerente");			
+		System.out.println("        5 - Programador");			
 	}
-	*/
+
+	
+	public static Funcionario cadastrarFuncionario(char cargo, String nome, String cpf, float salario){
+		Funcionario temp;
+		switch(cargo){
+			case '1':
+				temp = new Analista(nome, cpf, salario);
+				return temp;				
+			case '2':
+				temp = new AuxiliarDeLimpeza(nome, cpf, salario);
+				return temp;				
+			case '3':
+				temp = new Diretor(nome, cpf, salario);
+				return temp;				
+			case '4':
+				temp = new Gerente(nome, cpf, salario);
+				return temp;			
+			case '5':
+				temp = new Programador(nome, cpf, salario);
+				return temp;				
+			default:
+				System.out.println("Deu ruim!");
+				return null;				
+		}
+	}
+	
 	public static void imprimeRelatorio(Funcionario[] listaFuncionarios){
 
 	}

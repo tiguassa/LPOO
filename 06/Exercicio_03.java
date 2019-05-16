@@ -1,14 +1,16 @@
 import classesaux.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class Exercicio_03 {
 	public static void main(String args[]){
 		Scanner scan = new Scanner(System.in);
-		ArrayList<Funcionario> funcionarios;
+		ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
-		char op;
+		char op,  cargoAux	;
 		String nomeAux = "", cpfAux = "";
+		float salAux;
 		
 		while(true){
 			SistemaRH.imprimeMenu();
@@ -42,7 +44,16 @@ public class Exercicio_03 {
 									cpfAux = scan.nextLine();
 								}
 								System.out.println("CPF: " + cpfAux);
-
+								SistemaRH.imprimeCargos();
+								
+								cargoAux = scan.next().charAt(0);
+								
+								System.out.print("\nSalario: ");
+								salAux = scan.nextFloat();
+								Funcionario temp = SistemaRH.cadastrarFuncionario(cargoAux, nomeAux, cpfAux, salAux);
+								if(temp != null){
+									funcionarios.add(temp);									
+								}
 								break;
 							case '2':
 
