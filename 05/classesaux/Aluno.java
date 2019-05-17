@@ -116,13 +116,11 @@ public class Aluno{
 		dados += "\nPeriodo: " + getPeriodo();
 		if(this.disciplinasMatriculadas != null){
 			dados += "\nDisciplinas Matriculadas: ";
-
 			for(String s: this.disciplinasMatriculadas){
 				if(!(s.equals("")))
 					dados += (s + " - ");
 			}			
 		}
-
 		dados += "\n-----------------------------------------------------------------";
 		
 		return dados;
