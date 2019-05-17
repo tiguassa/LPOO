@@ -58,7 +58,7 @@ public class SistemaRH {
 	}
 
 	public static void imprimeCargos(){
-		System.out.println("        Cargo:");			
+		System.out.println("\n        Cargo:");			
 		System.out.println("        1 - Analista");			
 		System.out.println("        2 - Auxiliar de Limpeza");			
 		System.out.println("        3 - Diretor");			
@@ -92,9 +92,19 @@ public class SistemaRH {
 	}
 
 	public static void listarFuncionarios(ArrayList<Funcionario> funcionarios){
-		funcionarios.forEach(funcionario -> {
-            System.out.println(funcionario.getNome());
-        });
+		if(funcionarios.size() == 0){
+			System.out.println(" # Nenhum funcionario cadastrado.");
+		} else {
+			System.out.println("+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = +");
+			System.out.println("|                       Lista [Funcionarios]                          |");
+			System.out.println("+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = +");
+			System.out.println("                                                                       ");
+			funcionarios.forEach(funcionario -> {
+	            System.out.println("+ " + funcionario.getNome() + " - " + funcionario.getClassName());
+	        });
+			System.out.println("                                                                       ");
+			System.out.println("+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = +");			
+		}
 	}
 	
 	public static void imprimeRelatorio(Funcionario[] listaFuncionarios){
@@ -169,4 +179,26 @@ public class SistemaRH {
 	    // REF:
 		// https://www.devmedia.com.br/validando-o-cpf-em-uma-aplicacao-java/22097
 	} 
+
+	public static boolean isCargo(char cargo){
+		//System.out.println(Character.getNumericValue(cargo));
+		if(Character.getNumericValue(cargo) < 1 || Character.getNumericValue(cargo) > 5){
+			return false;
+		} else {
+			return true;
+		}
+		// REF:
+		// https://stackoverflow.com/questions/4968323/java-parse-int-value-from-a-char
+	}
+
+	public static boolean isSal(float sal){
+		String regex = "[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?";
+		if(!Float.toString(sal).matches(regex)){
+			return false;
+		} else {
+			return true;
+		}
+		// REF:
+		// https://stackoverflow.com/questions/16394491/validating-int-and-float-value-all-together
+	}
 }

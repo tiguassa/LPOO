@@ -43,5 +43,11 @@ public abstract class Funcionario {
         return (this.nome.equals(that.nome)) && (this.cpf == that.cpf);
     }
 
+    public String getClassName(){
+    	return this.getClass().getSimpleName();
+    	// REF:
+    	// https://www.quora.com/How-do-we-print-the-class-name-as-output-in-Java
+    }
+
     public abstract float getBonus();
 }

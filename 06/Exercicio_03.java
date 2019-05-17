@@ -33,7 +33,6 @@ public class Exercicio_03 {
 									System.out.print("\nInsira um nome valido: ");
 									nomeAux = scan.nextLine();
 								}
-								System.out.println("Nome: " + nomeAux);
 								cpfAux = "";
 								//scan.nextLine();
 								System.out.print("\nCPF(apenas numeros): ");
@@ -42,16 +41,25 @@ public class Exercicio_03 {
 									System.out.print("\nInsira um CPF valido: ");
 									cpfAux = scan.nextLine();
 								}
-								System.out.println("CPF: " + cpfAux);
-								SistemaRH.imprimeCargos();
-								
+								SistemaRH.imprimeCargos();								
 								cargoAux = scan.next().charAt(0);
-								
+								while(!SistemaRH.isCargo(cargoAux)){
+									System.out.println(" # Valor invalido!");
+									SistemaRH.imprimeCargos();								
+									cargoAux = scan.next().charAt(0);
+								}								
 								System.out.print("\nSalario: ");
 								salAux = scan.nextFloat();
+								while(!SistemaRH.isSal(salAux)){
+									System.out.println(" # Valor invalido!");
+									System.out.print("\nSalario: ");
+									salAux = scan.nextFloat();
+								}
 								Funcionario temp = SistemaRH.cadastrarFuncionario(cargoAux, nomeAux, cpfAux, salAux);
 								if(temp != null){
 									funcionarios.add(temp);									
+									System.out.println("Nome: " + temp.getNome());
+									System.out.println("CPF: " + temp.getCpf());
 								}
 								break;
 							case '2':
@@ -72,8 +80,7 @@ public class Exercicio_03 {
 				case '2':
 
 					break;
-				case '3':
-					System.out.println("asdf");
+				case '3':					
 					SistemaRH.listarFuncionarios(funcionarios);
 					break;
 				case '4':
