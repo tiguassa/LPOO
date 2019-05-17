@@ -1,6 +1,7 @@
 package classesaux;
 
 import java.util.InputMismatchException;
+import java.util.ArrayList;
 
 public class SistemaRH {	
 
@@ -88,6 +89,12 @@ public class SistemaRH {
 				System.out.println("Deu ruim!");
 				return null;				
 		}
+	}
+
+	public static void listarFuncionarios(ArrayList<Funcionario> funcionarios){
+		funcionarios.forEach(funcionario -> {
+            System.out.println(funcionario.getNome());
+        });
 	}
 	
 	public static void imprimeRelatorio(Funcionario[] listaFuncionarios){

@@ -1,7 +1,6 @@
 import classesaux.*;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 public class Exercicio_03 {
 	public static void main(String args[]){
@@ -59,7 +58,7 @@ public class Exercicio_03 {
 
 								break;
 							case '3':
-
+								
 								break;
 							case '4':
 
@@ -74,7 +73,8 @@ public class Exercicio_03 {
 
 					break;
 				case '3':
-
+					System.out.println("asdf");
+					SistemaRH.listarFuncionarios(funcionarios);
 					break;
 				case '4':
 
